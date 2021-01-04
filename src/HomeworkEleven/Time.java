@@ -6,21 +6,22 @@ public class Time {
     int hour;
     int minute;
     int second;
-    String month;
+    int month;
     int year;
 
    //argument constructor
     public Time (int hour, int minute, int second) {
+
         this.hour = hour;
         this.minute = minute;
         this.second = second;
     }
 
-    public Time (String month, int year) {
+    public Time (int month, int year) {
         this.month = month;
         this.year = year;
     }
-    public Time (int hour, int minute, int second, String month, int year) {
+    public Time (int hour, int minute, int second, int month, int year) {
         this.hour = hour;
         this.minute = minute;
         this.second = second;
@@ -42,7 +43,7 @@ public class Time {
         return second;
     }
 
-    public String getMonth() {
+    public int getMonth() {
         return month;
     }
 
@@ -52,25 +53,49 @@ public class Time {
 
 
     //setter
-    public void setHour(int newHour) {
-         this.hour = newHour;
+    public void setHour(int hour) {
 
-         if(hour > 0 && hour <=24) {
-             System.out.println(newHour);
-         }
-    }
+        if (hour <= 0 || hour > 23) {
+            this.hour = 0;
+        }else {
+            this.hour = hour;
+        }
 
-    public void setMinute(int newMinute) {
-        this.minute = newMinute;
-    }
-    public void setSecond(int newSecond) {
-        this.second = newSecond;
     }
 
-    public void setMonth(String newMonth) {
-        this.month = newMonth;
+    public void setMinute(int minute) {
+
+        if (minute < 0 || minute > 59) {
+            this.minute = 0;
+        }else {
+            this.minute = minute;
+        }
     }
-    public void setYear(int newYear) {
-        this.year = newYear;
+    public void setSecond(int second) {
+
+        if (second < 0 || second > 59) {
+            this.second = 0;
+        } else {
+            this.second = second;
+        }
     }
+
+    public void setMonth(int month) {
+        if(month < 0 || month >12) {
+            this.month = 0;
+        }else {
+            this.month = month;
+        }
+    }
+    public void setYear(int year) {
+       if(month<=0) {
+           this.year = 0;
+       } else {
+           this.year = year;
+       }
+    }
+
+
+
+
 }
