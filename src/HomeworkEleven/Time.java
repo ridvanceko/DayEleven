@@ -95,7 +95,30 @@ public class Time {
        }
     }
 
-
-
-
+    public void printTime(){
+        System.out.println(getHour()+"/"+getMinute()+"/"+getSecond());
+    }
+    public void printDate(){
+        System.out.println(getMonth()+"/"+getYear());
+    }
+    public String toString(){
+        return getHour()+"/"+getMinute()+"/"+getSecond()+" - "+getMonth()+"/"+getYear();
+    }
+    public static void instructions(){ // time.instructions();
+        System.out.println("Press 1 to create Time");
+        System.out.println("Press 2 to create Date");
+        System.out.println("Press 3 to create Date and Time");
+        System.out.println("Press 4 to update Time");
+        System.out.println("Press 5 to update Date");
+        System.out.println("Press 6 to print Time information");
+        System.out.println("Press 7 to print Date information");
+        System.out.println("Press 8 to print Date and Time information");
+        System.out.println("Press 9 to exit");
+    }
 }
+
+
+
+
+
+
